@@ -59,7 +59,7 @@ class Pinyin {
     /**
      * 将中文编码成拼音
      * @param string $utf8String utf8字符集数据
-     * @param string $strFormat 返回格式 [head:首字母|all:全拼音]
+     * @param string $strFormat 返回格式 [initial:首字母|all:拼音]
      * @param string $strSplit 拼接中间符号
      * @return string
      */
@@ -80,7 +80,7 @@ class Pinyin {
             else {
                 $arrBuf[] = self::toPinyin($intASCII);
             }
-                
+
         }
         if ('initial' === $strFormat) {
             return implode($strSplit, $arrBuf);
@@ -88,7 +88,7 @@ class Pinyin {
         else {
             return implode($strSplit, $arrBuf);
         }
-            
+
     }
 
     /**
@@ -113,4 +113,3 @@ class Pinyin {
 }
 
 
-echo Pinyin::encode("哇哈哈");
